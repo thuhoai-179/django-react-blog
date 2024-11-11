@@ -1,0 +1,59 @@
+{%extends "base.html"%}
+{%block content%}
+<body>
+    <style>
+        form {          
+            padding: 5px;
+            width: 470px;
+            border:3px orange solid;
+            margin:center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        
+        label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;        
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+   
+    </style>
+<div style="text-align:center;margin-top:90px;margin-left:10px">
+        <h1 style="color:orange"> ĐĂNG NHẬP </h1>
+        <p>Bạn đã có tài khoản? <span class="text-info"><a href="{% url 'register'%}">Đăng kí</a></span> </p>
+</div>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class=container-fluid >
+         <div class="text-align:center ">
+            <label for="username">Username</lable><br>
+            <input id="username" type="text" placeholder="enter your name"><br>
+
+            <label for="password">Password</lable><br>
+            <input id="password" Type="password" placeholder="enter your password"><br>
+            
+            <button style="width:420px ;background:orange" type="submit">Login</button>
+         </div>
+        </div> 
+    </form>
+</body>
+{%endblock%}

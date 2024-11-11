@@ -1,0 +1,96 @@
+{% extends "base.html"%}
+{%block content %}
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color:silver;
+}
+
+.container {
+    max-width: 800px;
+    height: 680px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color:white;
+}
+
+.info-box { 
+    border:1px black solid;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+form {
+    display:grid;
+    flex-direction: column;
+}
+
+input, textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    font-weight: bold;
+    color: #333;
+         
+    margin: 8px 0;
+    border-radius: 5px;   
+
+}
+
+h3{
+    color:orange;
+}
+
+button {
+    background-color: #051d6b;
+    color: white;
+    border: none;
+    border-radius:8px;
+    cursor: pointer;   
+
+}
+.grid-container{
+    grid-template-columns: repeat(2, 1fr); 
+    grid-gap: 140px;
+    margin-left:110px;
+  
+}
+  
+.grid-item{  
+    margin-left:-120px; 
+    text-align:left;
+    "
+} 
+
+</style>
+<div class="container">
+    <div class="grid-container">
+        <div class="grid-item">
+            <div class="info-box">
+                <h3>THÔNG TIN ĐỊA CHỈ</h3>
+                <p>Địa chỉ: Xa lộ Hà Nội, Phường Linh Trung, Quận Thủ Đức, Thành phố Hồ Chí Minh, Việt Nam</p>
+                <p>Email: anhthan@coca-cola.com</p>
+                <p>Hotline: 1900 5555 84</p>
+            </div>
+        </div>
+        <div class="grid-item">       
+            <div class="info-box">
+                <h3>THÔNG TIN LIÊN HỆ</h3>
+                <p>Địa chỉ: Xa lộ Hà Nội, Phường Linh Trung, Quận Thủ Đức, Thành phố Hồ Chí Minh, Việt Nam</p>
+                <p>Email: anhthan@coca-cola.com</p>
+                <p>Hotline: 1900 5555 84</p>
+            </div>
+        </div>
+    </div>
+    <h3 style="text-align:center">Liên hệ trực tiếp với chúng tôi:</h3>
+    <form>
+        <input type="text" placeholder="Tên">
+        <input type="email" placeholder="Email">
+        <input type="text" placeholder="Chủ đề">
+        <textarea placeholder="Nội dung"></textarea>
+        <button type="submit">Gửi tin nhắn</button>
+    </form>
+
+</div>
+
+{% endblock %}
