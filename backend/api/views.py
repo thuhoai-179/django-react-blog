@@ -15,23 +15,15 @@ from rest_framework.response import Response
 from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework import generics
 from rest_framework.permissions import AllowAny, IsAuthenticated
-from rest_framework.decorators import api_view, permission_classes
-from rest_framework_simplejwt.tokens import RefreshToken
 
-
-from drf_yasg import openapi
-from drf_yasg.utils import swagger_auto_schema
-from datetime import datetime
-
-# Others
-import json
-import random
 
 # Custom Imports
 from api import serializer as api_serializer
 from api import models as api_models
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from rest_framework.authentication import BasicAuthentication
+from .forms import UserRegisterForm
+from django.contrib import messages
 
 # Create your views here.
 def index(request):
